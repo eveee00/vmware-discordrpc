@@ -28,8 +28,8 @@ while True:
     
     # Update presence based on the number of running VMs
     if vmInfo == "Total running VMs: 0":
-        RPC.update(large_image="vmware_workstation_16_icon_svg", large_text="VMware Workstation Pro 17", state="*Imagine something here.*", details="No VMs running on host")  # Set the presence for no running vms.
+        RPC.update(large_image="vmware", large_text="VMware Workstation Pro 17", details="No VMs running on host")  # Set the presence for no running vms.
     else:
-        RPC.update(large_image="vmware_workstation_16_icon_svg", large_text="VMware Workstation Pro 17", small_image="play", small_text="VM(s) are running", state= vmInfoDirs, details= vmInfo)  # Update if VMs are running.
+        RPC.update(large_image="vmware", large_text="VMware Workstation Pro 17", small_image="play", small_text="VM(s) are running", state= vmInfoDirs, details= vmInfo)  # Update if VMs are running.
 
     time.sleep(15)  # Wait for 15 seconds before checking again, this is a limitation by discord.
