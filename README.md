@@ -12,12 +12,12 @@ A Discord rich presence for VMware written in python.
 ## How to install
 Clone the repo:	
 
-    `git clone https://github.com/veeeeeeee00/vmware-discordrpc.git`
+    git clone https://github.com/veeeeeeee00/vmware-discordrpc.git
 
   Change directory:
 
-     `cd vmware-discordrpc`
+     cd vmware-discordrpc
 
 Install requirements
 
-    `pip install -r requirements.txt`
+    pip install -r requirements.txt
