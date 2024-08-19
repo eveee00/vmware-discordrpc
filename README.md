@@ -41,7 +41,7 @@ Enjoy!
 ## TODO
 
  - [ ] Windows support
- - [ ] External settings file
+ - [x] External settings file
  - [x] Turning rich presence off when the vmware process isn't running
  ## Contributing
  PRs are welcome.

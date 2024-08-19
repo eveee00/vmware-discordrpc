@@ -2,21 +2,28 @@ from pypresence import Presence
 import time
 import os
 import re
-from pathlib import Path
+import pathlib
 import psutil
+import json
 
-client_id = "enter_client_id"  # Enter your Application ID here.
-RPC = Presence(client_id=client_id)
+with open("config.json", "r") as f: # Loads config.json 
+    config = json.load(f)
 
-def is_process_running(process_name):
-    """Checks if a process with the given name is running."""
+
+app_id = config.get("appId") # Extract AppId
+
+if __name__ == "__main__":
+    print(f"Using AppId: {app_id}")
+ 
+RPC = Presence(client_id=app_id)
+
+def is_process_running(process_name): # Checks if VMware is running.
     for proc in psutil.process_iter(['name']):
         if proc.info['name'] and proc.info['name'].lower() == process_name.lower():
             return True
     return False
 
 def update_presence():
-    """Updates the Discord Rich Presence based on the running VMs."""
     vmInfoPre = os.popen('vmrun list').read().strip()  # Check VM status for total count.
     vmInfoMatch = re.search(r'Total running VMs: \d+', vmInfoPre)  # Get the number of VMs running.
     
@@ -60,10 +67,10 @@ if __name__ == "__main__":
             update_presence()
         else:
             if connected:
-                print("VMware stopped running, dropping connection.")
+                print("VMware stopped running, dropping connection.") # Drops connection when VMware is closed.
                 RPC.close()
                 connected = False
             else:
                 print("VMware seems to not be running. Rechecking in 15 seconds.")
         
-        time.sleep(15)  # Wait for 15 seconds before checking again.
+        time.sleep(15)  # Wait for 15 seconds before checking again. This is a limitation by discord.
