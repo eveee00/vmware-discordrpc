@@ -10,7 +10,7 @@ A Discord rich presence for VMware written in python.
     pathlib, pypresence, psutil
 
 ## How to install
-Clone the repo:	
+Clone the repo	
 
     git clone https://github.com/veeeeeeee00/vmware-discordrpc.git
 
