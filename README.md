@@ -10,37 +10,36 @@ A Discord rich presence for VMware written in python.
     pathlib, pypresence, psutil
 
 ## How to install
-Clone the repo	
+1. Clone the repo	
 
     git clone https://github.com/veeeeeeee00/vmware-discordrpc.git
 
-  Change directory
+2. Change directory
 
      cd vmware-discordrpc
 
-Install requirements
+3. Install requirements
 
     pip install -r requirements.txt
 
-Edit  `config.json` to include your app ID. You can get one [here.](https://discord.com/developers/)
+4. Edit  `config.json` to include your app ID. You can get one [here.](https://discord.com/developers/)
 
     {
     "appId": "enter_discord_appid_here"
     }
 
-Upload both .png files from the `assets` folder here
+5. Upload both .png files from the `assets` folder here
 
     https://discord.com/developers/applications/[your-application-id]/rich-presence/assets
 
-Run file
+6. Run file
 
     python main.py
 
-Enjoy!
 
 ## Autostart on logon (KDE)
 
-Copy this basic `startrpc.sh` and customize it
+1. Copy this basic `startrpc.sh` and customize it
 
     #!/bin/bash
     cd /path/to/vmware-discordrpc
@@ -53,9 +52,9 @@ OPTIONAL: in case you used a venv to install the dependencies, you have to activ
     source venv/bin/activate
     python main.py
 
-Save it in a .sh script with the name of your choice
+2. Save it in a .sh script with the name of your choice
 
-Put it in your autostart
+3. Put it in your autostart
 
     KDE Settings > Autostart > Add... > Add Login Script > find and pick main.py
 
