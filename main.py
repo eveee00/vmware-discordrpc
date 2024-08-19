@@ -2,7 +2,7 @@ from pypresence import Presence
 import time
 import os
 import re
-import pathlib
+from pathlib import Path
 import psutil
 import json
 
