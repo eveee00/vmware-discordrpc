@@ -22,11 +22,11 @@ Install requirements
 
     pip install -r requirements.txt
 
-Edit  `main.py` to include your app ID. You can get one [here.](https://discord.com/developers/)
+Edit  `config.json` to include your app ID. You can get one [here.](https://discord.com/developers/)
 
-     [...]
-     client_id =  "enter_client_id"  # Enter your Application ID here.
-     [...]
+    {
+    "appId": "enter_discord_appid_here"
+    }
 
 Upload both .png files from the `assets` folder here
 
@@ -37,6 +37,23 @@ Run file
     python main.py
 
 Enjoy!
+
+## Autostart on logon (KDE)
+
+Copy this basic `startrpc.sh` and customize it
+
+    #!/bin/bash
+    cd /path/to/vmware-discordrpc
+    python main.py
+
+OPTIONAL: in case you used a venv to install the dependencies, you have to activate it first. Use this sample instead
+
+    #!/bin/bash
+    cd /path/to/vmware-discordrpc
+    source venv/bin/activate
+    python main.py
+
+
 
 ## TODO
 
