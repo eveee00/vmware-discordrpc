@@ -17,7 +17,7 @@ elif platformName == "Windows":
     vmrunDir = "C:/PROGRA~2/VMware/VMWARE~1/vmrun.exe"
     vmwareProcName = "vmware.exe"
 else:
-    print("Unsupported platform or detection failed! Exiting,")
+    print("Unsupported platform or detection failed! Exiting...")
     exit(-1)
 with open("config.json", "r") as f: # Loads config.json 
     config = json.load(f)
