@@ -5,7 +5,20 @@ import re
 from pathlib import Path
 import psutil
 import json
+import platform
 
+platformName = platform.system()
+print("Running on: " + platformName)
+
+if platformName == "Linux":
+    vmrunDir = "vmrun"
+    vmwareProcName = "vmware"
+elif platformName == "Windows":
+    vmrunDir = "C:/PROGRA~2/VMware/VMWARE~1/vmrun.exe"
+    vmwareProcName = "vmware.exe"
+else:
+    print("Unsupported platform or detection failed! Exiting,")
+    exit(-1)
 with open("config.json", "r") as f: # Loads config.json 
     config = json.load(f)
 
@@ -24,9 +37,8 @@ def is_process_running(process_name): # Checks if VMware is running.
     return False
 
 def update_presence():
-    vmInfoPre = os.popen('vmrun list').read().strip()  # Check VM status for total count.
+    vmInfoPre = os.popen(vmrunDir + ' list').read().strip()  # Check VM status for total count.
     vmInfoMatch = re.search(r'Total running VMs: \d+', vmInfoPre)  # Get the number of VMs running.
-    
     if vmInfoMatch:
         vmInfo = vmInfoMatch.group(0)
     else:
@@ -59,7 +71,7 @@ def update_presence():
 if __name__ == "__main__":
     connected = False
     while True:
-        if is_process_running("vmware"):
+        if is_process_running(vmwareProcName):
             if not connected:
                 print("VMware detected, connecting to discord RPC.") # connects do discord if VMware process is started
                 RPC.connect()

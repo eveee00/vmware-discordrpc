@@ -4,7 +4,7 @@
 
 A Discord rich presence for VMware written in python.
 
-*Note: this is still very early in development. There is still some stuff missing. (ex. Windows support)*
+*Note: this is still in development. There is still some stuff missing.*
 ## Requirements
 
     pathlib, pypresence, psutil
@@ -63,7 +63,7 @@ Enjoy!
 
 ## TODO
 
- - [ ] Windows support
+ - [x] Windows support
  - [x] External settings file
  - [x] Turning rich presence off when the vmware process isn't running
  ## Contributing
