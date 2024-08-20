@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 import psutil
 import json
+import time
 
 with open("config.json", "r") as f: # Loads config.json 
     config = json.load(f)
@@ -47,13 +48,15 @@ def update_presence():
             details="No VMs running on host."
         )  # Set the presence for no running VMs.
     else:
+        start_time=time.time()
         RPC.update(
             large_image="vmware",
             large_text="VMware Workstation Pro 17",
             small_image="play",
             small_text="VM(s) are running",
             state=vmInfoDirs,
-            details=vmInfo
+            details=vmInfo,
+            start=start_time
         )  # Update if VMs are running.
 
 if __name__ == "__main__":
