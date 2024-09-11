@@ -57,7 +57,7 @@ Save it in a .sh script with the name of your choice
 
 Put it in your autostart
 
-    KDE Settings > Autostart > Add... > Add Login Script > find and pick main.py
+    KDE Settings > Autostart > Add... > Add Login Script > find and pick the script
 
 Enjoy!
 
