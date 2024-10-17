@@ -19,11 +19,9 @@ elif platformName == "Windows":
 else:
     print("Unsupported platform or detection failed! Exiting...")
     exit(-1)
-with open("config.json", "r") as f: # Loads config.json 
-    config = json.load(f)
 
 
-app_id = config.get("appId") # Extract AppId
+app_id = 1115368788024623124
 
 if __name__ == "__main__":
     print(f"Using AppId: {app_id}")
